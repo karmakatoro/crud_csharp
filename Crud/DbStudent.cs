@@ -73,5 +73,25 @@ namespace Crud
             }
             con.Close();
         }
+        public static void deleteStudent(Student student, string id)
+        {
+            string query = "DELETE FROM t_student WHERE id = @id";
+            MySqlConnection con = getConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show(student.name + " deleted successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Student not deleted!!! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
     }
 }
