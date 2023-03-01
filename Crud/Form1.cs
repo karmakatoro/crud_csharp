@@ -62,6 +62,7 @@ namespace Crud
             Student student = new Student(name,reg,@class,section);
             DbStudent.addStudent(student);
             clear();
+            _parent.display();
         }
 
         private void btnErase_Click(object sender, EventArgs e)

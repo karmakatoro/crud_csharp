@@ -16,7 +16,10 @@ namespace Crud
         {
             InitializeComponent();
         }
-
+        public void display()
+        {
+            DbStudent.displayAndSearch("SELECT id,name,reg,class,section FROM t_student", dataGridView);
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -29,8 +32,13 @@ namespace Crud
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FormStudent form = new FormStudent();
+            FormStudent form = new FormStudent(this);
             form.ShowDialog();
+        }
+
+        private void FormStudentInfo_Load(object sender, EventArgs e)
+        {
+            display();
         }
     }
 }
