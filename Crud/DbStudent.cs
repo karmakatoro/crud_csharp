@@ -90,8 +90,16 @@ namespace Crud
             {
                 MessageBox.Show("Student not deleted!!! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
+        }
+        public static void displayAndSearch(string q, DataGridView dtv)
+        {
+            string query = q;
+            MySqlConnection con = getConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataAdapter msdp = new MySqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            msdp.Fill(table);
+            con.Close();
         }
     }
 }
