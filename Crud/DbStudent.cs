@@ -29,7 +29,7 @@ namespace Crud
         }
         public static void addStudent(Student student)
         {
-            string query = "INSERT INTO t_student(NULL,@name,@reg, @class, @section, NULL)";
+            string query = "INSERT INTO t_student VALUES (NULL,@name,@reg, @class, @section, NULL)";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
@@ -46,10 +46,32 @@ namespace Crud
             catch (MySqlException ex)
             {
 
-                MessageBox.Show("Student not insert!!! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Student not inserted!!! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            con.Close();
+        }
+        public static void updateStudent(Student student, string id)
+        {
+            string query = "UPDATE t_student SET name = @name,reg = @reg, class = @class, section = @section WHERE id= @id";
+            MySqlConnection con = getConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = student.name;
+            cmd.Parameters.Add("@reg", MySqlDbType.VarChar).Value = student.reg;
+            cmd.Parameters.Add("@class", MySqlDbType.VarChar).Value = student.@class;
+            cmd.Parameters.Add("@section", MySqlDbType.VarChar).Value = student.section;
 
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show(student.name + " updated successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
 
+                MessageBox.Show("Student not updated!!! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
         }
     }
 }
