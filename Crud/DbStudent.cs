@@ -7,14 +7,13 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
 
-
 namespace Crud
 {
     class DbStudent
     {
         public static MySqlConnection  getConnection()
         {
-            string query = "Server=localhost;Database=t_crud;Uid=root;Pwd=;";
+            string query = "datasource=localhost;port=3306;username=root;password=;database=db_crud";
             MySqlConnection con = new MySqlConnection(query);
             try
             {
@@ -29,7 +28,7 @@ namespace Crud
         }
         public static void addStudent(Student student)
         {
-            string query = "INSERT INTO t_student VALUES (NULL,@name,@reg, @class, @section, NULL)";
+            string query = "INSERT INTO t_student (name,reg,class,section) VALUES (@name,@reg, @class, @section)";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;

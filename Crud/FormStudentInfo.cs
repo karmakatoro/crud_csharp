@@ -15,6 +15,7 @@ namespace Crud
         public FormStudentInfo()
         {
             InitializeComponent();
+            display();
         }
         public void display()
         {
