@@ -39,7 +39,7 @@ namespace Crud
 
         private void FormStudentInfo_Load(object sender, EventArgs e)
         {
-            //display();
+            display();
         }
     }
 }

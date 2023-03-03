@@ -92,13 +92,22 @@ namespace Crud
         }
         public static void displayAndSearch(string q, DataGridView dtv)
         {
-            string query = q;
-            MySqlConnection con = getConnection();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataAdapter msdp = new MySqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            msdp.Fill(table);
-            con.Close();
+            try
+            {
+                string query = q;
+                MySqlConnection con = getConnection();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlDataAdapter msdp = new MySqlDataAdapter(cmd);
+                DataTable table = new DataTable();
+                msdp.Fill(table);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("An error occured!!! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
     }
 }
