@@ -13,7 +13,7 @@ namespace Crud
     public partial class FormStudent : Form
     {
         private readonly FormStudentInfo _parent;
-        string id, name, reg, @class, section;
+        public string id, name, reg, @class, section;
         public FormStudent(FormStudentInfo parent)
         {
             InitializeComponent();

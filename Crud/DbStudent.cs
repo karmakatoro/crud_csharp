@@ -55,6 +55,7 @@ namespace Crud
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = student.name;
             cmd.Parameters.Add("@reg", MySqlDbType.VarChar).Value = student.reg;
             cmd.Parameters.Add("@class", MySqlDbType.VarChar).Value = student.@class;

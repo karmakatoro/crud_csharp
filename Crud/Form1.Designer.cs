@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelAddStudent = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnErase = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.textSection = new System.Windows.Forms.TextBox();
             this.textClass = new System.Windows.Forms.TextBox();
@@ -40,11 +41,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnErase = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnErase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +87,17 @@
             this.panel2.Size = new System.Drawing.Size(292, 270);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnErase
+            // 
+            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
+            this.btnErase.Location = new System.Drawing.Point(184, 212);
+            this.btnErase.Name = "btnErase";
+            this.btnErase.Size = new System.Drawing.Size(39, 34);
+            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnErase.TabIndex = 7;
+            this.btnErase.TabStop = false;
+            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
             // 
             // btnSave
             // 
@@ -175,17 +186,6 @@
             this.label2.Text = "Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // btnErase
-            // 
-            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
-            this.btnErase.Location = new System.Drawing.Point(184, 212);
-            this.btnErase.Name = "btnErase";
-            this.btnErase.Size = new System.Drawing.Size(39, 34);
-            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnErase.TabIndex = 7;
-            this.btnErase.TabStop = false;
-            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
-            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,13 +196,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StudentAdd";
+            this.Text = "Student Form";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnErase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             this.ResumeLayout(false);
 
         }

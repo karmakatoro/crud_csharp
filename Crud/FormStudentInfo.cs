@@ -55,6 +55,14 @@ namespace Crud
         {
             if(e.ColumnIndex == 0)
             {
+                form.clear();
+                form.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                form.name = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                form.reg = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                form.@class = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                form.section = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                form.updateInfos();
+                form.ShowDialog();
                 return;
             }
             if (e.ColumnIndex == 1)
