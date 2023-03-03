@@ -19,7 +19,8 @@ namespace Crud
         }
         public void display()
         {
-            DbStudent.displayAndSearch("SELECT id,name,reg,class,section FROM t_student", dataGridView);
+            string query = "SELECT id, name, reg,class,section FROM t_student";
+            DbStudent.displayAndSearch(query, dataGridView);
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -40,6 +41,13 @@ namespace Crud
         private void FormStudentInfo_Load(object sender, EventArgs e)
         {
             display();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string toSearch = textSearch.Text.Trim();
+            string query = "SELECT id, name, reg,class,section FROM t_student WHERE name LIKE'%" + toSearch +"%'";
+            DbStudent.displayAndSearch(query, dataGridView);
         }
     }
 }

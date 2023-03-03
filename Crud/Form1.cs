@@ -43,31 +43,41 @@ namespace Crud
             string reg = textReg.Text.Trim();
             string @class = textClass.Text.Trim();
             string section = textSection.Text.Trim();
-            if (name.Length < 3)
+            if(name == "" || reg == "" || @class == "" || section == "")
             {
-                MessageBox.Show("Too short name");
+                MessageBox.Show("All fields are required");
             }
-            if (reg.Length < 1)
+            else
             {
-                MessageBox.Show("Too short reg");
+                if (name.Length < 3)
+                {
+                    MessageBox.Show("Too short name");
+                }
+                else
+                {
+                    if (reg.Length < 1)
+                    {
+                        MessageBox.Show("Too short reg");
+                    }
+                    else
+                    {
+                        Student student = new Student(name, reg, @class, section);
+                        DbStudent.addStudent(student);
+                        clear();
+                        _parent.display();
+                    }
+                }
             }
-            if (@class.Length == 0)
-            {
-                MessageBox.Show("Invalid class");
-            }
-            if (section.Length == 0)
-            {
-                MessageBox.Show("Invalid section");
-            }
-            Student student = new Student(name,reg,@class,section);
-            DbStudent.addStudent(student);
-            clear();
-            _parent.display();
         }
 
         private void btnErase_Click(object sender, EventArgs e)
         {
             clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
