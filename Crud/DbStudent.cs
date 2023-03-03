@@ -72,7 +72,7 @@ namespace Crud
             }
             con.Close();
         }
-        public static void deleteStudent(Student student, string id)
+        public static void deleteStudent(string id)
         {
             string query = "DELETE FROM t_student WHERE id = @id";
             MySqlConnection con = getConnection();
@@ -83,7 +83,7 @@ namespace Crud
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(student.name + " deleted successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Deleted successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {

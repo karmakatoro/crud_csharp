@@ -49,5 +49,22 @@ namespace Crud
             string query = "SELECT id, name, reg,class,section FROM t_student WHERE name LIKE'%" + toSearch +"%'";
             DbStudent.displayAndSearch(query, dataGridView);
         }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 0)
+            {
+                return;
+            }
+            if (e.ColumnIndex == 1)
+            {
+                DialogResult dialog = MessageBox.Show("Are you sure to delete this student?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                if(dialog == DialogResult.Yes)
+                {
+                    DbStudent.deleteStudent(dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    display();
+                }
+            }
+        }
     }
 }
