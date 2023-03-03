@@ -13,10 +13,20 @@ namespace Crud
     public partial class FormStudent : Form
     {
         private readonly FormStudentInfo _parent;
+        string id, name, reg, @class, section;
         public FormStudent(FormStudentInfo parent)
         {
             InitializeComponent();
             _parent = parent;
+        }
+        public void updateInfos()
+        {
+            labelAddStudent.Text = "Update Student";
+            btnSave.Name = "btnUpdate";
+            textName.Text = name;
+            textReg.Text = reg;
+            textClass.Text = @class;
+            textSection.Text = section;
         }
         public void clear()
         {
@@ -61,10 +71,20 @@ namespace Crud
                     }
                     else
                     {
-                        Student student = new Student(name, reg, @class, section);
-                        DbStudent.addStudent(student);
-                        clear();
-                        _parent.display();
+                        if(btnSave.Name == "btnSave")
+                        {
+                            Student student = new Student(name, reg, @class, section);
+                            DbStudent.addStudent(student);
+                            clear();
+                            _parent.display();
+                        }
+                        if(btnSave.Name == "btnUpdate")
+                        {
+
+                            Student student = new Student(name, reg, @class, section);
+                            DbStudent.updateStudent(student, id);
+                        }
+                       
                     }
                 }
             }

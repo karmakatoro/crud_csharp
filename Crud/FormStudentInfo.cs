@@ -12,10 +12,11 @@ namespace Crud
 {
     public partial class FormStudentInfo : Form
     {
+        FormStudent form;
         public FormStudentInfo()
         {
             InitializeComponent();
-            display();
+            form = new FormStudent(this);
         }
         public void display()
         {
@@ -34,7 +35,7 @@ namespace Crud
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FormStudent form = new FormStudent(this);
+            form.clear();
             form.ShowDialog();
         }
 
@@ -61,7 +62,9 @@ namespace Crud
                 DialogResult dialog = MessageBox.Show("Are you sure to delete this student?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if(dialog == DialogResult.Yes)
                 {
-                    DbStudent.deleteStudent(dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    string studid = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string studname = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString(); ;
+                    DbStudent.deleteStudent(studname, studid);
                     display();
                 }
             }
