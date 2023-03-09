@@ -37,6 +37,7 @@ namespace Crud
         {
             form.clear();
             form.ShowDialog();
+            
         }
 
         private void FormStudentInfo_Load(object sender, EventArgs e)
@@ -67,11 +68,11 @@ namespace Crud
             }
             if (e.ColumnIndex == 1)
             {
-                DialogResult dialog = MessageBox.Show("Are you sure to delete this student?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                string studid = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string studname = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString(); ;
+                DialogResult dialog = MessageBox.Show("Are you sure to delete "+studname+"?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if(dialog == DialogResult.Yes)
                 {
-                    string studid = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    string studname = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString(); ;
                     DbStudent.deleteStudent(studname, studid);
                     display();
                 }
