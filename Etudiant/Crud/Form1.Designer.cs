@@ -99,6 +99,7 @@
             this.picQR.Location = new System.Drawing.Point(322, 12);
             this.picQR.Name = "picQR";
             this.picQR.Size = new System.Drawing.Size(84, 84);
+            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picQR.TabIndex = 12;
             this.picQR.TabStop = false;
             this.picQR.Click += new System.EventHandler(this.pictureBox3_Click);

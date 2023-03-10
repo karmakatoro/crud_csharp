@@ -12,7 +12,14 @@ namespace Crud
         private string post_nom;
         private string prenom;
         private string promotion;
-        private byte image;
+
+        public Student(string nom, string post_nom, string prenom, string promotion)
+        {
+            this.nom = nom;
+            this.post_nom = post_nom;
+            this.prenom = prenom;
+            this.promotion = promotion;
+        }
 
         public string Nom
         {
@@ -64,28 +71,6 @@ namespace Crud
             {
                 promotion = value;
             }
-        }
-
-        public byte Image
-        {
-            get
-            {
-                return image;
-            }
-
-            set
-            {
-                image = value;
-            }
-        }
-
-        public Student(string nom, string post_nom, string prenom, string promotion, byte image)
-        {
-            this.nom = nom;
-            this.post_nom = post_nom;
-            this.prenom = prenom;
-            this.promotion = promotion;
-            this.image = image;
         }
     }
 }

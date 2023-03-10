@@ -26,7 +26,7 @@ namespace Crud
             }
             return con;
         }
-        public static void addStudent(Student student)
+        public static void addStudent(Student student, byte[] img)
         {
             string query = "INSERT INTO t_student (nom,post_nom,prenom,promotion,image) VALUES (@nom,@post_nom,@prenom,@promotion,@image)";
             MySqlConnection con = getConnection();
@@ -36,7 +36,7 @@ namespace Crud
             cmd.Parameters.Add("@post_nom", MySqlDbType.VarChar).Value = student.Post_nom;
             cmd.Parameters.Add("@prenom", MySqlDbType.VarChar).Value = student.Prenom;
             cmd.Parameters.Add("@promotion", MySqlDbType.VarChar).Value = student.Promotion;
-            cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = student.Image;
+            cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = img;
 
             try
             {
@@ -50,7 +50,7 @@ namespace Crud
             }
             con.Close();
         }
-        public static void updateStudent(Student student, string id)
+        public static void updateStudent(Student student, string id, byte[] img)
         {
             string query = "UPDATE t_student SET nom = @nom,post_nom = @post_nom, prenom = @prenom, promotion = @promotion, image = @image WHERE id= @id";
             MySqlConnection con = getConnection();
@@ -61,7 +61,7 @@ namespace Crud
             cmd.Parameters.Add("@post_nom", MySqlDbType.VarChar).Value = student.Post_nom;
             cmd.Parameters.Add("@prenom", MySqlDbType.VarChar).Value = student.Prenom;
             cmd.Parameters.Add("@promotion", MySqlDbType.VarChar).Value = student.Promotion;
-            cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = student.Image;
+            cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = img;
 
             try
             {

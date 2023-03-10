@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Crud
 {
@@ -19,6 +20,13 @@ namespace Crud
         {
             InitializeComponent();
             _parent = parent;
+        }
+        public byte[] imgProcess()
+        {
+            MemoryStream memorystream = new MemoryStream();
+            picImg.Image.Save(memorystream,picImg.Image.RawFormat);
+            byte[] img = memorystream.ToArray();
+            return img;
         }
         public void updateInfos()
         {
@@ -66,43 +74,29 @@ namespace Crud
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string name = textNom.Text.Trim();
-            string reg = textPost_nom.Text.Trim();
-            string @class = textPrenom.Text.Trim();
-            string section = textPromotion.Text.Trim();
-            if(name == "" || reg == "" || @class == "" || section == "")
+            string nom = textNom.Text.Trim();
+            string post_nom = textPost_nom.Text.Trim();
+            string prenom = textPrenom.Text.Trim();
+            string promotion = textPromotion.Text.Trim();
+            byte[] image = imgProcess();
+            if(nom == "" || post_nom == "" || prenom == "" || promotion == "")
             {
                 MessageBox.Show("All fields are required");
             }
             else
             {
-                if (name.Length < 3)
+  
+                if(btnSave.Name == "btnSave")
                 {
-                    MessageBox.Show("Too short name");
+                    Student student = new Student(nom, post_nom, prenom, promotion);
+                    DbStudent.addStudent(student, image);
+                    clear();
+                    _parent.display();
                 }
-                else
+                if(btnSave.Name == "btnUpdate")
                 {
-                    if (reg.Length < 1)
-                    {
-                        MessageBox.Show("Too short reg");
-                    }
-                    else
-                    {
-                        if(btnSave.Name == "btnSave")
-                        {
-                            Student student = new Student(nom, post_nom, prenom, promotion, image);
-                            DbStudent.addStudent(student);
-                            clear();
-                            _parent.display();
-                        }
-                        if(btnSave.Name == "btnUpdate")
-                        {
-
-                            Student student = new Student(nom, post_nom, prenom, promotion, image);
-                            DbStudent.updateStudent(student, id);
-                        }
-                       
-                    }
+                    Student student = new Student(nom, post_nom, prenom, promotion);
+                    DbStudent.updateStudent(student, id, image); 
                 }
             }
         }
