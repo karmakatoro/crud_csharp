@@ -1,0 +1,27 @@
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\bin\Debug\Crud.exe.config
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\bin\Debug\Crud.exe
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\bin\Debug\Crud.pdb
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.csprojResolveAssemblyReference.cache
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.Properties.Resources.resources
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.csproj.GenerateResource.Cache
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.exe
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.pdb
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.FormStudentInfo.resources
+c:\users\karma03\documents\visual studio 2015\Projects\Crud\Crud\obj\Debug\Crud.FormStudent.resources
+C:\Users\karma03\Documents\Visual Studio 2015\Projects\Crud\Crud\bin\Debug\MySql.Data.dll
+C:\Users\karma03\Documents\Crud\Crud\bin\Debug\Crud.exe.config
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.exe
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.pdb
+C:\Users\karma03\Documents\Crud\Crud\bin\Debug\Crud.exe
+C:\Users\karma03\Documents\Crud\Crud\bin\Debug\Crud.pdb
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.csprojResolveAssemblyReference.cache
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.FormStudent.resources
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.FormStudentInfo.resources
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.Properties.Resources.resources
+C:\Users\karma03\Documents\Crud\Crud\obj\Debug\Crud.csproj.GenerateResource.Cache
+C:\Users\karma03\Documents\Crud - Copie\Crud\bin\Debug\Crud.exe.config
+C:\Users\karma03\Documents\Crud - Copie\Crud\obj\Debug\Crud.exe
+C:\Users\karma03\Documents\Crud - Copie\Crud\obj\Debug\Crud.pdb
+C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\bin\Debug\Crud.exe.config
+C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\obj\Debug\Crud.exe
+C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\obj\Debug\Crud.pdb
