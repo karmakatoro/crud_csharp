@@ -93,6 +93,16 @@ namespace Crud.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_image_file_add_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_image_file_add_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_search_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_search_16", resourceCulture);
