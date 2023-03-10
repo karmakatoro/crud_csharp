@@ -8,20 +8,84 @@ namespace Crud
 {
     class Student
     {
-        public Student(string name, string reg, string @class, string section)
+        private string nom;
+        private string post_nom;
+        private string prenom;
+        private string promotion;
+        private byte image;
+
+        public string Nom
         {
-            this.name = name;
-            this.reg = reg;
-            this.@class = @class;
-            this.section = section;
+            get
+            {
+                return nom;
+            }
+
+            set
+            {
+                nom = value;
+            }
         }
 
-        public string name { get; set; }
-        public string reg { get; set; }
-        public string @class { get; set; }
-        public string section { get; set; }
+        public string Post_nom
+        {
+            get
+            {
+                return post_nom;
+            }
 
+            set
+            {
+                post_nom = value;
+            }
+        }
 
+        public string Prenom
+        {
+            get
+            {
+                return prenom;
+            }
 
+            set
+            {
+                prenom = value;
+            }
+        }
+
+        public string Promotion
+        {
+            get
+            {
+                return promotion;
+            }
+
+            set
+            {
+                promotion = value;
+            }
+        }
+
+        public byte Image
+        {
+            get
+            {
+                return image;
+            }
+
+            set
+            {
+                image = value;
+            }
+        }
+
+        public Student(string nom, string post_nom, string prenom, string promotion, byte image)
+        {
+            this.nom = nom;
+            this.post_nom = post_nom;
+            this.prenom = prenom;
+            this.promotion = promotion;
+            this.image = image;
+        }
     }
 }

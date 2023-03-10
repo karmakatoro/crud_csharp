@@ -13,7 +13,7 @@ namespace Crud
     {
         public static MySqlConnection  getConnection()
         {
-            string query = "datasource=localhost;port=3306;username=root;password=;database=db_crud";
+            string query = "datasource=localhost;port=3306;username=root;password=;database=db_student";
             MySqlConnection con = new MySqlConnection(query);
             try
             {
@@ -26,16 +26,17 @@ namespace Crud
             }
             return con;
         }
-        public static void addStudent(Student student)
+        public static void addStudent(Student student, byte img)
         {
             string query = "INSERT INTO t_student (name,reg,class,section) VALUES (@name,@reg, @class, @section)";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = student.name;
-            cmd.Parameters.Add("@reg", MySqlDbType.VarChar).Value = student.reg;
-            cmd.Parameters.Add("@class", MySqlDbType.VarChar).Value = student.@class;
-            cmd.Parameters.Add("@section", MySqlDbType.VarChar).Value = student.section;
+            cmd.Parameters.Add("@nom", MySqlDbType.VarChar).Value = student.Nom;
+            cmd.Parameters.Add("@post_nom", MySqlDbType.VarChar).Value = student.Post_nom;
+            cmd.Parameters.Add("@prenom", MySqlDbType.VarChar).Value = student.Prenom;
+            cmd.Parameters.Add("@promotion", MySqlDbType.VarChar).Value = student.Promotion;
+            cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = student.Image;
 
             try
             {
