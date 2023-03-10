@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.PictureBox();
+            this.btnQR = new System.Windows.Forms.PictureBox();
+            this.picQR = new System.Windows.Forms.PictureBox();
             this.labelAddStudent = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddImg = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picImg = new System.Windows.Forms.PictureBox();
+            this.btnErase = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             this.textPromotion = new System.Windows.Forms.TextBox();
             this.textPrenom = new System.Windows.Forms.TextBox();
             this.textPost_nom = new System.Windows.Forms.TextBox();
@@ -39,23 +47,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAddImg = new System.Windows.Forms.PictureBox();
-            this.picImg = new System.Windows.Forms.PictureBox();
-            this.btnErase = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
-            this.btnPrint = new System.Windows.Forms.PictureBox();
-            this.btnQR = new System.Windows.Forms.PictureBox();
-            this.picQR = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnErase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnQR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,8 +68,40 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 97);
+            this.panel1.Size = new System.Drawing.Size(421, 115);
             this.panel1.TabIndex = 0;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Image = global::Crud.Properties.Resources.icons8_print_64;
+            this.btnPrint.Location = new System.Drawing.Point(276, 62);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(39, 34);
+            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.TabStop = false;
+            // 
+            // btnQR
+            // 
+            this.btnQR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQR.Image = global::Crud.Properties.Resources.icons8_qr_code_64;
+            this.btnQR.Location = new System.Drawing.Point(277, 12);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(39, 34);
+            this.btnQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnQR.TabIndex = 12;
+            this.btnQR.TabStop = false;
+            // 
+            // picQR
+            // 
+            this.picQR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picQR.Location = new System.Drawing.Point(322, 12);
+            this.picQR.Name = "picQR";
+            this.picQR.Size = new System.Drawing.Size(84, 84);
+            this.picQR.TabIndex = 12;
+            this.picQR.TabStop = false;
+            this.picQR.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // labelAddStudent
             // 
@@ -104,6 +136,61 @@
             this.panel2.Size = new System.Drawing.Size(372, 221);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddImg.Image = global::Crud.Properties.Resources.icons8_image_file_add_64;
+            this.btnAddImg.Location = new System.Drawing.Point(229, 163);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(39, 34);
+            this.btnAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAddImg.TabIndex = 11;
+            this.btnAddImg.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(225, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Image";
+            // 
+            // picImg
+            // 
+            this.picImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImg.Location = new System.Drawing.Point(229, 36);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(129, 114);
+            this.picImg.TabIndex = 8;
+            this.picImg.TabStop = false;
+            // 
+            // btnErase
+            // 
+            this.btnErase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
+            this.btnErase.Location = new System.Drawing.Point(274, 163);
+            this.btnErase.Name = "btnErase";
+            this.btnErase.Size = new System.Drawing.Size(39, 34);
+            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnErase.TabIndex = 7;
+            this.btnErase.TabStop = false;
+            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Image = global::Crud.Properties.Resources.save_48px;
+            this.btnSave.Location = new System.Drawing.Point(319, 163);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(39, 34);
+            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSave.TabIndex = 6;
+            this.btnSave.TabStop = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // textPromotion
             // 
@@ -181,91 +268,6 @@
             this.label2.Text = "Nom";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(225, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Image";
-            // 
-            // btnAddImg
-            // 
-            this.btnAddImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddImg.Image = global::Crud.Properties.Resources.icons8_image_file_add_64;
-            this.btnAddImg.Location = new System.Drawing.Point(229, 163);
-            this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(39, 34);
-            this.btnAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAddImg.TabIndex = 11;
-            this.btnAddImg.TabStop = false;
-            // 
-            // picImg
-            // 
-            this.picImg.Location = new System.Drawing.Point(229, 36);
-            this.picImg.Name = "picImg";
-            this.picImg.Size = new System.Drawing.Size(129, 114);
-            this.picImg.TabIndex = 8;
-            this.picImg.TabStop = false;
-            // 
-            // btnErase
-            // 
-            this.btnErase.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
-            this.btnErase.Location = new System.Drawing.Point(274, 163);
-            this.btnErase.Name = "btnErase";
-            this.btnErase.Size = new System.Drawing.Size(39, 34);
-            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnErase.TabIndex = 7;
-            this.btnErase.TabStop = false;
-            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Image = global::Crud.Properties.Resources.save_48px;
-            this.btnSave.Location = new System.Drawing.Point(319, 163);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(39, 34);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 6;
-            this.btnSave.TabStop = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.Image = global::Crud.Properties.Resources.icons8_print_64;
-            this.btnPrint.Location = new System.Drawing.Point(276, 52);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(39, 34);
-            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPrint.TabIndex = 13;
-            this.btnPrint.TabStop = false;
-            // 
-            // btnQR
-            // 
-            this.btnQR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQR.Image = global::Crud.Properties.Resources.icons8_qr_code_64;
-            this.btnQR.Location = new System.Drawing.Point(277, 12);
-            this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(39, 34);
-            this.btnQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnQR.TabIndex = 12;
-            this.btnQR.TabStop = false;
-            // 
-            // picQR
-            // 
-            this.picQR.Location = new System.Drawing.Point(322, 12);
-            this.picQR.Name = "picQR";
-            this.picQR.Size = new System.Drawing.Size(84, 74);
-            this.picQR.TabIndex = 12;
-            this.picQR.TabStop = false;
-            this.picQR.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,15 +281,15 @@
             this.Text = "Student Form";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnErase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnQR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.ResumeLayout(false);
 
         }
