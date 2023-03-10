@@ -13,7 +13,8 @@ namespace Crud
     public partial class FormStudent : Form
     {
         private readonly FormStudentInfo _parent;
-        public string id, name, reg, @class, section;
+        public string id, nom, post_nom, prenom, promotion;
+        public byte image;
         public FormStudent(FormStudentInfo parent)
         {
             InitializeComponent();
@@ -23,14 +24,15 @@ namespace Crud
         {
             labelAddStudent.Text = "Update Student";
             btnSave.Name = "btnUpdate";
-            textName.Text = name;
-            textReg.Text = reg;
-            textClass.Text = @class;
-            textSection.Text = section;
+            textNom.Text = nom;
+            textPost_nom.Text = post_nom;
+            textPrenom.Text = prenom;
+            textPromotion.Text = promotion;
+
         }
         public void clear()
         {
-            textName.Text = textReg.Text = textClass.Text = textSection.Text = string.Empty;
+            textNom.Text = textPost_nom.Text = textPrenom.Text = textPromotion.Text = string.Empty;
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -42,6 +44,11 @@ namespace Crud
 
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -49,10 +56,10 @@ namespace Crud
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string name = textName.Text.Trim();
-            string reg = textReg.Text.Trim();
-            string @class = textClass.Text.Trim();
-            string section = textSection.Text.Trim();
+            string name = textNom.Text.Trim();
+            string reg = textPost_nom.Text.Trim();
+            string @class = textPrenom.Text.Trim();
+            string section = textPromotion.Text.Trim();
             if(name == "" || reg == "" || @class == "" || section == "")
             {
                 MessageBox.Show("All fields are required");
@@ -73,7 +80,7 @@ namespace Crud
                     {
                         if(btnSave.Name == "btnSave")
                         {
-                            Student student = new Student(name, reg, @class, section);
+                            Student student = new Student(nom, post_nom, prenom, promotion, image);
                             DbStudent.addStudent(student);
                             clear();
                             _parent.display();
@@ -81,7 +88,7 @@ namespace Crud
                         if(btnSave.Name == "btnUpdate")
                         {
 
-                            Student student = new Student(name, reg, @class, section);
+                            Student student = new Student(nom, post_nom, prenom, promotion, image);
                             DbStudent.updateStudent(student, id);
                         }
                        

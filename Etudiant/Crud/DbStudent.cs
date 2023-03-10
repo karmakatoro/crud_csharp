@@ -26,7 +26,7 @@ namespace Crud
             }
             return con;
         }
-        public static void addStudent(Student student, byte img)
+        public static void addStudent(Student student)
         {
             string query = "INSERT INTO t_student (nom,post-nom,prenom,promotion,image) VALUES (@nom,@post_nom,@prenom,@promotion,@image)";
             MySqlConnection con = getConnection();
@@ -50,7 +50,7 @@ namespace Crud
             }
             con.Close();
         }
-        public static void updateStudent(Student student, string id, byte img)
+        public static void updateStudent(Student student, string id)
         {
             string query = "UPDATE t_student SET nom = @nom,post-nom = @post_nom, prenom = @prenom, promotion = @promotion, image = @image WHERE id= @id";
             MySqlConnection con = getConnection();

@@ -31,30 +31,44 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelAddStudent = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnErase = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
-            this.textSection = new System.Windows.Forms.TextBox();
-            this.textClass = new System.Windows.Forms.TextBox();
-            this.textReg = new System.Windows.Forms.TextBox();
-            this.textName = new System.Windows.Forms.TextBox();
+            this.textPromotion = new System.Windows.Forms.TextBox();
+            this.textPrenom = new System.Windows.Forms.TextBox();
+            this.textPost_nom = new System.Windows.Forms.TextBox();
+            this.textNom = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAddImg = new System.Windows.Forms.PictureBox();
+            this.picImg = new System.Windows.Forms.PictureBox();
+            this.btnErase = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.PictureBox();
+            this.btnPrint = new System.Windows.Forms.PictureBox();
+            this.btnQR = new System.Windows.Forms.PictureBox();
+            this.picQR = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnErase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnPrint);
+            this.panel1.Controls.Add(this.btnQR);
+            this.panel1.Controls.Add(this.picQR);
             this.panel1.Controls.Add(this.labelAddStudent);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(369, 85);
+            this.panel1.Size = new System.Drawing.Size(421, 97);
             this.panel1.TabIndex = 0;
             // 
             // labelAddStudent
@@ -72,71 +86,52 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnAddImg);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.picImg);
             this.panel2.Controls.Add(this.btnErase);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.textSection);
-            this.panel2.Controls.Add(this.textClass);
-            this.panel2.Controls.Add(this.textReg);
-            this.panel2.Controls.Add(this.textName);
+            this.panel2.Controls.Add(this.textPromotion);
+            this.panel2.Controls.Add(this.textPrenom);
+            this.panel2.Controls.Add(this.textPost_nom);
+            this.panel2.Controls.Add(this.textNom);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(34, 110);
+            this.panel2.Location = new System.Drawing.Point(34, 121);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 270);
+            this.panel2.Size = new System.Drawing.Size(372, 221);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // btnErase
+            // textPromotion
             // 
-            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
-            this.btnErase.Location = new System.Drawing.Point(184, 212);
-            this.btnErase.Name = "btnErase";
-            this.btnErase.Size = new System.Drawing.Size(39, 34);
-            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnErase.TabIndex = 7;
-            this.btnErase.TabStop = false;
-            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
+            this.textPromotion.Location = new System.Drawing.Point(20, 177);
+            this.textPromotion.Name = "textPromotion";
+            this.textPromotion.Size = new System.Drawing.Size(201, 20);
+            this.textPromotion.TabIndex = 3;
             // 
-            // btnSave
+            // textPrenom
             // 
-            this.btnSave.Image = global::Crud.Properties.Resources.save_48px;
-            this.btnSave.Location = new System.Drawing.Point(229, 212);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(39, 34);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 6;
-            this.btnSave.TabStop = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.textPrenom.Location = new System.Drawing.Point(20, 130);
+            this.textPrenom.Name = "textPrenom";
+            this.textPrenom.Size = new System.Drawing.Size(201, 20);
+            this.textPrenom.TabIndex = 3;
             // 
-            // textSection
+            // textPost_nom
             // 
-            this.textSection.Location = new System.Drawing.Point(20, 177);
-            this.textSection.Name = "textSection";
-            this.textSection.Size = new System.Drawing.Size(248, 20);
-            this.textSection.TabIndex = 3;
+            this.textPost_nom.Location = new System.Drawing.Point(20, 83);
+            this.textPost_nom.Name = "textPost_nom";
+            this.textPost_nom.Size = new System.Drawing.Size(201, 20);
+            this.textPost_nom.TabIndex = 3;
             // 
-            // textClass
+            // textNom
             // 
-            this.textClass.Location = new System.Drawing.Point(20, 130);
-            this.textClass.Name = "textClass";
-            this.textClass.Size = new System.Drawing.Size(248, 20);
-            this.textClass.TabIndex = 3;
-            // 
-            // textReg
-            // 
-            this.textReg.Location = new System.Drawing.Point(20, 83);
-            this.textReg.Name = "textReg";
-            this.textReg.Size = new System.Drawing.Size(248, 20);
-            this.textReg.TabIndex = 3;
-            // 
-            // textName
-            // 
-            this.textName.Location = new System.Drawing.Point(20, 36);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(248, 20);
-            this.textName.TabIndex = 3;
+            this.textNom.Location = new System.Drawing.Point(20, 36);
+            this.textNom.Name = "textNom";
+            this.textNom.Size = new System.Drawing.Size(201, 20);
+            this.textNom.TabIndex = 3;
             // 
             // label5
             // 
@@ -145,9 +140,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(16, 153);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 21);
+            this.label5.Size = new System.Drawing.Size(88, 21);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Section";
+            this.label5.Text = "Promotion";
             this.label5.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
@@ -157,9 +152,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(16, 106);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 21);
+            this.label4.Size = new System.Drawing.Size(67, 21);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Class";
+            this.label4.Text = "Prenom";
             this.label4.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -169,9 +164,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(16, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 21);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Reg.";
+            this.label3.Text = "Post-nom";
             this.label3.Click += new System.EventHandler(this.label2_Click);
             // 
             // label2
@@ -181,16 +176,101 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(16, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 21);
+            this.label2.Size = new System.Drawing.Size(46, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
+            this.label2.Text = "Nom";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(225, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Image";
+            // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddImg.Image = global::Crud.Properties.Resources.icons8_image_file_add_64;
+            this.btnAddImg.Location = new System.Drawing.Point(229, 163);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(39, 34);
+            this.btnAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAddImg.TabIndex = 11;
+            this.btnAddImg.TabStop = false;
+            // 
+            // picImg
+            // 
+            this.picImg.Location = new System.Drawing.Point(229, 36);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(129, 114);
+            this.picImg.TabIndex = 8;
+            this.picImg.TabStop = false;
+            // 
+            // btnErase
+            // 
+            this.btnErase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
+            this.btnErase.Location = new System.Drawing.Point(274, 163);
+            this.btnErase.Name = "btnErase";
+            this.btnErase.Size = new System.Drawing.Size(39, 34);
+            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnErase.TabIndex = 7;
+            this.btnErase.TabStop = false;
+            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Image = global::Crud.Properties.Resources.save_48px;
+            this.btnSave.Location = new System.Drawing.Point(319, 163);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(39, 34);
+            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSave.TabIndex = 6;
+            this.btnSave.TabStop = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.Image = global::Crud.Properties.Resources.icons8_print_64;
+            this.btnPrint.Location = new System.Drawing.Point(276, 52);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(39, 34);
+            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrint.TabIndex = 13;
+            this.btnPrint.TabStop = false;
+            // 
+            // btnQR
+            // 
+            this.btnQR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQR.Image = global::Crud.Properties.Resources.icons8_qr_code_64;
+            this.btnQR.Location = new System.Drawing.Point(277, 12);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(39, 34);
+            this.btnQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnQR.TabIndex = 12;
+            this.btnQR.TabStop = false;
+            // 
+            // picQR
+            // 
+            this.picQR.Location = new System.Drawing.Point(322, 12);
+            this.picQR.Name = "picQR";
+            this.picQR.Size = new System.Drawing.Size(84, 74);
+            this.picQR.TabIndex = 12;
+            this.picQR.TabStop = false;
+            this.picQR.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 416);
+            this.ClientSize = new System.Drawing.Size(421, 370);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -201,8 +281,13 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnErase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,14 +298,20 @@
         private System.Windows.Forms.Label labelAddStudent;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textName;
-        private System.Windows.Forms.TextBox textSection;
-        private System.Windows.Forms.TextBox textClass;
-        private System.Windows.Forms.TextBox textReg;
+        private System.Windows.Forms.TextBox textNom;
+        private System.Windows.Forms.TextBox textPromotion;
+        private System.Windows.Forms.TextBox textPrenom;
+        private System.Windows.Forms.TextBox textPost_nom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox btnSave;
         private System.Windows.Forms.PictureBox btnErase;
+        private System.Windows.Forms.PictureBox btnAddImg;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picImg;
+        private System.Windows.Forms.PictureBox picQR;
+        private System.Windows.Forms.PictureBox btnPrint;
+        private System.Windows.Forms.PictureBox btnQR;
     }
 }

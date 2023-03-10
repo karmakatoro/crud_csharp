@@ -20,7 +20,7 @@ namespace Crud
         }
         public void display()
         {
-            string query = "SELECT id, name, reg,class,section FROM t_student";
+            string query = "SELECT id,nom,post-nom,prenom,promotion FROM t_student";
             DbStudent.displayAndSearch(query, dataGridView);
         }
         private void label1_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Crud
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string toSearch = textSearch.Text.Trim();
-            string query = "SELECT id, name, reg,class,section FROM t_student WHERE name LIKE'%" + toSearch +"%'";
+            string query = "SELECT id,nom,post-nom,prenom,promotion FROM t_student WHERE nom LIKE'%" + toSearch +"%' OR post-nom LIKE'%"+ toSearch+"%' OR prenom LIKE'%"+toSearch+"%'";
             DbStudent.displayAndSearch(query, dataGridView);
         }
 
@@ -58,10 +58,10 @@ namespace Crud
             {
                 form.clear();
                 form.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                form.name = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                form.reg = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                form.@class = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
-                form.section = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                form.nom = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                form.post_nom = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                form.prenom = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                form.promotion = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
                 form.updateInfos();
                 form.ShowDialog();
                 return;
