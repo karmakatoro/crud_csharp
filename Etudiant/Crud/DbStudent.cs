@@ -28,7 +28,7 @@ namespace Crud
         }
         public static void addStudent(Student student, byte img)
         {
-            string query = "INSERT INTO t_student (name,reg,class,section) VALUES (@name,@reg, @class, @section)";
+            string query = "INSERT INTO t_student (nom,post-nom,prenom,promotion,image) VALUES (@nom,@post_nom,@prenom,@promotion,@image)";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
@@ -36,12 +36,12 @@ namespace Crud
             cmd.Parameters.Add("@post_nom", MySqlDbType.VarChar).Value = student.Post_nom;
             cmd.Parameters.Add("@prenom", MySqlDbType.VarChar).Value = student.Prenom;
             cmd.Parameters.Add("@promotion", MySqlDbType.VarChar).Value = student.Promotion;
-            cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = student.Image;
+            cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = student.Image;
 
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(student.name+" added successfully","Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(student.Nom+" added successfully","Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
@@ -50,22 +50,23 @@ namespace Crud
             }
             con.Close();
         }
-        public static void updateStudent(Student student, string id)
+        public static void updateStudent(Student student, string id, byte img)
         {
-            string query = "UPDATE t_student SET name = @name,reg = @reg, class = @class, section = @section WHERE id= @id";
+            string query = "UPDATE t_student SET nom = @nom,post-nom = @post_nom, prenom = @prenom, promotion = @promotion, image = @image WHERE id= @id";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-            cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = student.name;
-            cmd.Parameters.Add("@reg", MySqlDbType.VarChar).Value = student.reg;
-            cmd.Parameters.Add("@class", MySqlDbType.VarChar).Value = student.@class;
-            cmd.Parameters.Add("@section", MySqlDbType.VarChar).Value = student.section;
+            cmd.Parameters.Add("@nom", MySqlDbType.VarChar).Value = student.Nom;
+            cmd.Parameters.Add("@post_nom", MySqlDbType.VarChar).Value = student.Post_nom;
+            cmd.Parameters.Add("@prenom", MySqlDbType.VarChar).Value = student.Prenom;
+            cmd.Parameters.Add("@promotion", MySqlDbType.VarChar).Value = student.Promotion;
+            cmd.Parameters.Add("@image", MySqlDbType.LongBlob).Value = student.Image;
 
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(student.name + " updated successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(student.Nom + " updated successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
