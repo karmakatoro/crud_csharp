@@ -49,6 +49,16 @@ namespace Crud
 
         }
 
+        private void btnAddImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfiledialog = new OpenFileDialog();
+            openfiledialog.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+            if(openfiledialog.ShowDialog()== DialogResult.OK)
+            {
+                picImg.Image = Image.FromFile(openfiledialog.FileName);
+            }
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 

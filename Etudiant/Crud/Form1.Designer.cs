@@ -147,6 +147,7 @@
             this.btnAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAddImg.TabIndex = 11;
             this.btnAddImg.TabStop = false;
+            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
             // 
             // label1
             // 
@@ -165,6 +166,7 @@
             this.picImg.Location = new System.Drawing.Point(229, 36);
             this.picImg.Name = "picImg";
             this.picImg.Size = new System.Drawing.Size(129, 114);
+            this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImg.TabIndex = 8;
             this.picImg.TabStop = false;
             // 
