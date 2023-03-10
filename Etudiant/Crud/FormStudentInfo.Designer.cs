@@ -168,7 +168,7 @@
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "post-nom";
+            this.Column3.DataPropertyName = "post_nom";
             this.Column3.HeaderText = "Post-nom";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;

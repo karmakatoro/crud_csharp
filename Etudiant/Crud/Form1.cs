@@ -41,6 +41,7 @@ namespace Crud
         public void clear()
         {
             textNom.Text = textPost_nom.Text = textPrenom.Text = textPromotion.Text = string.Empty;
+            
         }
         private void label1_Click(object sender, EventArgs e)
         {
