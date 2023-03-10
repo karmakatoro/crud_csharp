@@ -20,7 +20,7 @@ namespace Crud
         }
         public void display()
         {
-            string query = "SELECT id,nom,post-nom,prenom,promotion FROM t_student";
+            string query = "SELECT id,nom,post_nom,prenom,promotion FROM t_student";
             DbStudent.displayAndSearch(query, dataGridView);
         }
         private void label1_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Crud
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string toSearch = textSearch.Text.Trim();
-            string query = "SELECT id,nom,post-nom,prenom,promotion FROM t_student WHERE nom LIKE'%" + toSearch +"%' OR post-nom LIKE'%"+ toSearch+"%' OR prenom LIKE'%"+toSearch+"%'";
+            string query = "SELECT id,nom,post_nom,prenom,promotion FROM t_student WHERE nom LIKE'%" + toSearch +"%' OR post_nom LIKE'%"+ toSearch+"%' OR prenom LIKE'%"+toSearch+"%'";
             DbStudent.displayAndSearch(query, dataGridView);
         }
 

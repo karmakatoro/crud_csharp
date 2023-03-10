@@ -28,7 +28,7 @@ namespace Crud
         }
         public static void addStudent(Student student)
         {
-            string query = "INSERT INTO t_student (nom,post-nom,prenom,promotion,image) VALUES (@nom,@post_nom,@prenom,@promotion,@image)";
+            string query = "INSERT INTO t_student (nom,post_nom,prenom,promotion,image) VALUES (@nom,@post_nom,@prenom,@promotion,@image)";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;
@@ -52,7 +52,7 @@ namespace Crud
         }
         public static void updateStudent(Student student, string id)
         {
-            string query = "UPDATE t_student SET nom = @nom,post-nom = @post_nom, prenom = @prenom, promotion = @promotion, image = @image WHERE id= @id";
+            string query = "UPDATE t_student SET nom = @nom,post_nom = @post_nom, prenom = @prenom, promotion = @promotion, image = @image WHERE id= @id";
             MySqlConnection con = getConnection();
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.CommandType = CommandType.Text;

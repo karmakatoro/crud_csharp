@@ -119,6 +119,15 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_image_file_add_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_qr_code_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
