@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
+
 
 namespace Crud
 {
@@ -112,13 +114,13 @@ namespace Crud
             }
            
         }
-        public void GET_PHOTO(string query, PictureBox img, int row)
+        public void GET_PHOTO(string query, PictureBox image, int row)
         {
             try
             {
                 MySqlConnection con = getConnection();
                 MySqlCommand cmd = new MySqlCommand();
-                MySqlDataReader dr = new MySqlDataReader();
+                MySqlDataReader dr;
 
                 cmd.CommandText = query + "";
                 dr = cmd.ExecuteReader();
@@ -126,22 +128,23 @@ namespace Crud
                 {
                     byte[] img = (byte[])(dr[row]);
                     if (img == null)
-                        picemp.Image = null;
+                        image.Image = null;
                     else
                     {
                         MemoryStream ms = new MemoryStream(img);
-                        picemp.Image = System.Drawing.Image.FromStream(ms);
+                        image.Image = System.Drawing.Image.FromStream(ms);
                     }
 
                 }
+                con.Close();
 
                 //  Console.WriteLine("select PHOTO from " + table + " where " + colonne_ref + "='" + reference + "'");
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("" + ex);
             }
-            con.Close();
+            
         }
     }
 }
