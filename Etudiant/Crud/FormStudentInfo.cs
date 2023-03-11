@@ -54,7 +54,7 @@ namespace Crud
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 0)
+            if(e.ColumnIndex == 1)
             {
                 form.clear();
                 form.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -66,11 +66,12 @@ namespace Crud
                 form.ShowDialog();
                 return;
             }
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 2)
             {
                 string studid = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string studname = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString(); ;
-                DialogResult dialog = MessageBox.Show("Are you sure to delete "+studname+"?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                string studname = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string studpost_name = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString(); ;
+                DialogResult dialog = MessageBox.Show("Are you sure to delete "+studname+" "+studpost_name+"?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                 if(dialog == DialogResult.Yes)
                 {
                     DbStudent.deleteStudent(studname, studid);
