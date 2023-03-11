@@ -112,5 +112,36 @@ namespace Crud
             }
            
         }
+        public void GET_PHOTO(string query, PictureBox img, int row)
+        {
+            try
+            {
+                MySqlConnection con = getConnection();
+                MySqlCommand cmd = new MySqlCommand();
+                MySqlDataReader dr = new MySqlDataReader();
+
+                cmd.CommandText = query + "";
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    byte[] img = (byte[])(dr[row]);
+                    if (img == null)
+                        picemp.Image = null;
+                    else
+                    {
+                        MemoryStream ms = new MemoryStream(img);
+                        picemp.Image = System.Drawing.Image.FromStream(ms);
+                    }
+
+                }
+
+                //  Console.WriteLine("select PHOTO from " + table + " where " + colonne_ref + "='" + reference + "'");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            con.Close();
+        }
     }
 }

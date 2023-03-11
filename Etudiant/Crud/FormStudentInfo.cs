@@ -58,7 +58,7 @@ namespace Crud
         {
             if(e.ColumnIndex == 0)
             {
-                //show.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                show.id = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
                 show.nom = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
                 show.post_nom = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
                 show.prenom = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
@@ -69,11 +69,11 @@ namespace Crud
             if(e.ColumnIndex == 1)
             {
                 form.clear();
-                form.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                form.nom = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                form.post_nom = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                form.prenom = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
-                form.promotion = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                form.id = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                form.nom = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                form.post_nom = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                form.prenom = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                form.promotion = dataGridView.Rows[e.RowIndex].Cells[7].Value.ToString();
                 form.updateInfos();
                 form.ShowDialog();
                 return;
