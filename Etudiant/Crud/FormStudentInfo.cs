@@ -54,6 +54,10 @@ namespace Crud
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.ColumnIndex == 0)
+            {
+
+            }
             if(e.ColumnIndex == 1)
             {
                 form.clear();
