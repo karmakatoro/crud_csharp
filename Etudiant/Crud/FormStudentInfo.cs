@@ -13,10 +13,12 @@ namespace Crud
     public partial class FormStudentInfo : Form
     {
         FormStudent form;
+        ShowStudent show;
         public FormStudentInfo()
         {
             InitializeComponent();
             form = new FormStudent(this);
+            show = new ShowStudent(this);
         }
         public void display()
         {
@@ -56,7 +58,13 @@ namespace Crud
         {
             if(e.ColumnIndex == 0)
             {
-
+                //show.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                show.nom = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                show.post_nom = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                show.prenom = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                show.promotion = dataGridView.Rows[e.RowIndex].Cells[7].Value.ToString();
+                show.initInfos();
+                show.ShowDialog();
             }
             if(e.ColumnIndex == 1)
             {
