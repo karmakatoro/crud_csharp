@@ -19,6 +19,9 @@ namespace Crud
         {
             InitializeComponent();
             _parent = parent;
+            labelTitle.Text = "Add Student";
+            btnSave.Name = "btnSave";
+            
         }
         public byte[] imgProcess()
         {
@@ -29,7 +32,7 @@ namespace Crud
         }
         public void updateInfos()
         {
-            labelAddStudent.Text = "Update Student";
+            labelTitle.Text = "Update Student";
             btnSave.Name = "btnUpdate";
             textNom.Text = nom;
             textPost_nom.Text = post_nom;
@@ -41,6 +44,7 @@ namespace Crud
         public void clear()
         {
             textNom.Text = textPost_nom.Text = textPrenom.Text = textPromotion.Text = string.Empty;
+            picImg.Image = null;
             
         }
         private void label1_Click(object sender, EventArgs e)
@@ -79,6 +83,10 @@ namespace Crud
             {
                 DbStudent.getImage(id, picImg, "image");
             }
+            else
+            {
+                clear();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -110,7 +118,9 @@ namespace Crud
                 if(btnSave.Name == "btnUpdate")
                 {
                     Student student = new Student(nom, post_nom, prenom, promotion);
-                    DbStudent.updateStudent(student, id, image); 
+                    DbStudent.updateStudent(student, id, image);
+                    FormStudent form = new FormStudent(_parent);
+                   
                 }
             }
         }

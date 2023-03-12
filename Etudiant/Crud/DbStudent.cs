@@ -132,9 +132,15 @@ namespace Crud
                 {
 
                     byte[] img = (byte[])(data[row]);
-                   
-                    MemoryStream ms = new MemoryStream(img);
-                    image.Image = System.Drawing.Image.FromStream(ms);
+                    if (img == null)
+                    {
+                        image.Image = null;
+                    }
+                    else
+                    {
+                        MemoryStream ms = new MemoryStream(img);
+                        image.Image = System.Drawing.Image.FromStream(ms);
+                    }
                     
 
                 }

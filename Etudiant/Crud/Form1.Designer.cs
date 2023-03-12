@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelAddStudent = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddImg = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.labelAddStudent);
+            this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -63,17 +63,16 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // labelAddStudent
+            // labelTitle
             // 
-            this.labelAddStudent.AutoSize = true;
-            this.labelAddStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddStudent.ForeColor = System.Drawing.Color.White;
-            this.labelAddStudent.Location = new System.Drawing.Point(30, 40);
-            this.labelAddStudent.Name = "labelAddStudent";
-            this.labelAddStudent.Size = new System.Drawing.Size(103, 21);
-            this.labelAddStudent.TabIndex = 1;
-            this.labelAddStudent.Text = "Add Student";
-            this.labelAddStudent.Click += new System.EventHandler(this.label1_Click);
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(30, 40);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(103, 21);
+            this.labelTitle.TabIndex = 1;
+            this.labelTitle.Text = "Add Student";
             // 
             // panel2
             // 
@@ -257,7 +256,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelAddStudent;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textNom;
