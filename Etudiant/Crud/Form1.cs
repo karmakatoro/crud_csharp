@@ -36,6 +36,7 @@ namespace Crud
             textPost_nom.Text = post_nom;
             textPrenom.Text = prenom;
             textPromotion.Text = promotion;
+            
 
         }
         public void clear()
