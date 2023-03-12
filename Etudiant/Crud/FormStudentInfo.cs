@@ -80,7 +80,7 @@ namespace Crud
             }
             if (e.ColumnIndex == 2)
             {
-                string studid = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string studid = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string studname = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
                 string studpost_name = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString(); ;
                 DialogResult dialog = MessageBox.Show("Are you sure to delete "+studname+" "+studpost_name+"?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);

@@ -114,26 +114,28 @@ namespace Crud
             }
            
         }
-        public void GET_PHOTO(string query, PictureBox image, int row)
+        public static void getImage(string id, PictureBox image, string row)
         {
             try
             {
                 MySqlConnection con = getConnection();
-                MySqlCommand cmd = new MySqlCommand();
-                MySqlDataReader dr;
+                string query = "SELECT image FROM t_student WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
 
-                cmd.CommandText = query + "";
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
+                MySqlDataReader data;
+                data = cmd.ExecuteReader();
+
+               
+                while (data.Read())
                 {
-                    byte[] img = (byte[])(dr[row]);
-                    if (img == null)
-                        image.Image = null;
-                    else
-                    {
-                        MemoryStream ms = new MemoryStream(img);
-                        image.Image = System.Drawing.Image.FromStream(ms);
-                    }
+
+                    byte[] img = (byte[])(data[row]);
+                   
+                    MemoryStream ms = new MemoryStream(img);
+                    image.Image = System.Drawing.Image.FromStream(ms);
+                    
 
                 }
                 con.Close();

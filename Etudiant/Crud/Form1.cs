@@ -15,7 +15,6 @@ namespace Crud
     {
         private readonly FormStudentInfo _parent;
         public string id, nom, post_nom, prenom, promotion;
-        public byte image;
         public FormStudent(FormStudentInfo parent)
         {
             InitializeComponent();
@@ -66,6 +65,19 @@ namespace Crud
             if(openfiledialog.ShowDialog()== DialogResult.OK)
             {
                 picImg.Image = Image.FromFile(openfiledialog.FileName);
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormStudent_Load(object sender, EventArgs e)
+        {
+            if (btnSave.Name == "btnUpdate")
+            {
+                DbStudent.getImage(id, picImg, "image");
             }
         }
 

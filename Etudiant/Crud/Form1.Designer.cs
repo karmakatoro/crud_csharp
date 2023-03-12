@@ -31,7 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelAddStudent = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddImg = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.picImg = new System.Windows.Forms.PictureBox();
+            this.btnErase = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             this.textPromotion = new System.Windows.Forms.TextBox();
             this.textPrenom = new System.Windows.Forms.TextBox();
             this.textPost_nom = new System.Windows.Forms.TextBox();
@@ -40,10 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddImg = new System.Windows.Forms.PictureBox();
-            this.picImg = new System.Windows.Forms.PictureBox();
-            this.btnErase = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImg)).BeginInit();
@@ -61,6 +61,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(395, 86);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // labelAddStudent
             // 
@@ -96,6 +97,18 @@
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnAddImg
+            // 
+            this.btnAddImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddImg.Image = global::Crud.Properties.Resources.icons8_image_file_add_64;
+            this.btnAddImg.Location = new System.Drawing.Point(229, 163);
+            this.btnAddImg.Name = "btnAddImg";
+            this.btnAddImg.Size = new System.Drawing.Size(39, 34);
+            this.btnAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAddImg.TabIndex = 11;
+            this.btnAddImg.TabStop = false;
+            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -106,6 +119,40 @@
             this.label1.Size = new System.Drawing.Size(56, 21);
             this.label1.TabIndex = 9;
             this.label1.Text = "Image";
+            // 
+            // picImg
+            // 
+            this.picImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImg.Location = new System.Drawing.Point(229, 36);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(129, 114);
+            this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImg.TabIndex = 8;
+            this.picImg.TabStop = false;
+            // 
+            // btnErase
+            // 
+            this.btnErase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
+            this.btnErase.Location = new System.Drawing.Point(274, 163);
+            this.btnErase.Name = "btnErase";
+            this.btnErase.Size = new System.Drawing.Size(39, 34);
+            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnErase.TabIndex = 7;
+            this.btnErase.TabStop = false;
+            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Image = global::Crud.Properties.Resources.save_48px;
+            this.btnSave.Location = new System.Drawing.Point(319, 163);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(39, 34);
+            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSave.TabIndex = 6;
+            this.btnSave.TabStop = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // textPromotion
             // 
@@ -183,52 +230,6 @@
             this.label2.Text = "Nom";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // btnAddImg
-            // 
-            this.btnAddImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddImg.Image = global::Crud.Properties.Resources.icons8_image_file_add_64;
-            this.btnAddImg.Location = new System.Drawing.Point(229, 163);
-            this.btnAddImg.Name = "btnAddImg";
-            this.btnAddImg.Size = new System.Drawing.Size(39, 34);
-            this.btnAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAddImg.TabIndex = 11;
-            this.btnAddImg.TabStop = false;
-            this.btnAddImg.Click += new System.EventHandler(this.btnAddImg_Click);
-            // 
-            // picImg
-            // 
-            this.picImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picImg.Location = new System.Drawing.Point(229, 36);
-            this.picImg.Name = "picImg";
-            this.picImg.Size = new System.Drawing.Size(129, 114);
-            this.picImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImg.TabIndex = 8;
-            this.picImg.TabStop = false;
-            // 
-            // btnErase
-            // 
-            this.btnErase.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnErase.Image = global::Crud.Properties.Resources.erase_60px;
-            this.btnErase.Location = new System.Drawing.Point(274, 163);
-            this.btnErase.Name = "btnErase";
-            this.btnErase.Size = new System.Drawing.Size(39, 34);
-            this.btnErase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnErase.TabIndex = 7;
-            this.btnErase.TabStop = false;
-            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Image = global::Crud.Properties.Resources.save_48px;
-            this.btnSave.Location = new System.Drawing.Point(319, 163);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(39, 34);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSave.TabIndex = 6;
-            this.btnSave.TabStop = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +241,7 @@
             this.Name = "FormStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Form";
+            this.Load += new System.EventHandler(this.FormStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
