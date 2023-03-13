@@ -201,3 +201,4 @@ C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\bin\Debug\ja\DevExpress.Xp
 C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\bin\Debug\ru\DevExpress.Xpo.v15.2.resources.dll
 C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\obj\Debug\Crud.exe.licenses
 C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\obj\Debug\Crud.ShowStudent.resources
+C:\Users\karma03\Documents\Crud - Copie\Etudiant\Crud\obj\Debug\Crud.Loading.resources
