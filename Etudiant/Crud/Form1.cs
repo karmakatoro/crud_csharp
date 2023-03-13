@@ -120,7 +120,8 @@ namespace Crud
                     Student student = new Student(nom, post_nom, prenom, promotion);
                     DbStudent.updateStudent(student, id, image);
                     FormStudent form = new FormStudent(_parent);
-                   
+                    _parent.display();
+
                 }
             }
         }
